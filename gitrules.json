@@ -1,4 +1,193 @@
 {
-  "setup-files": [],
-  "rules": []
+  "setup-files": [
+    {
+      "path": "files/chapters/chapter-5.txt",
+      "contents": "Doug noticed something lying on the floor of his shop"
+    },
+    {
+      "path": "files/chapters/chapter-6.txt",
+      "contents": "Betty woke up with a terrible."
+    },
+    {
+      "path": "files/chapters/chapter-7.txt",
+      "contents": "Gantt bought a jet-ski and flew out to Florida."
+    }
+  ],
+  "rules": [
+    {
+      "rule": "text",
+      "separator": "-",
+      "width": 50,
+      "heading": "ADDING THE NEXT TWO CHAPTERS",
+      "double-space": true
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "score-if-correct": 5,
+      "path": "files/chapters/chapter-5.txt",
+      "contents": "Chapter 5 complete",
+      "ignore-case": true,
+      "alternative-title": "Commit chapter 5 with the correct message."
+    },
+    {
+      "rule": "commit-with-message-doesnt-update-file",
+      "score-if-correct": 5,
+      "path": "files/chapters/chapter-6.txt",
+      "contents": "Chapter 5 complete",
+      "ignore-case": true,
+      "failure-message": "Chapter 5 and 6 were committed together instead of separately",
+      "alternative-title": "Commit chapter 5 separately from 6."
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "score-if-correct": 5,
+      "path": "files/chapters/chapter-6.txt",
+      "contents": "Chapter 6 complete",
+      "ignore-case": true,
+      "alternative-title": "Commit chapter 6 with the correct message."
+    },
+    {
+      "rule": "file-untracked-in-head",
+      "score-if-correct": 5,
+      "path": "files/chapters/chapter-7.txt",
+      "ignore-case": true,
+      "alternative-title": "Don't commit chapter 7."
+    },
+    {
+      "rule": "text",
+      "separator": "-",
+      "width": 50,
+      "heading": "REMOVE HIS APPENDIX",
+      "double-space": true
+    },
+    {
+      "rule": "file-untracked-in-head",
+      "path": "files/chapters/appendix-a.txt",
+      "score-if-correct": 5,
+      "alternative-title": "Appendix has been removed."
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "path": "files/chapters/appendix-a.txt",
+      "contents": "Ignore appendices",
+      "ignore-case": true,
+      "score-if-correct": 5,
+      "alternative-title": "Appendix removed with correct message."
+    },
+    {
+      "rule": "ignored",
+      "path": "files/chapters/appendix-whatever.txt",
+      "failure-message": "You must ignore all appendix files",
+      "score-if-correct": 5,
+      "alternative-title": "Git ignores appendix files"
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "path": ".gitignore",
+      "contents": "Ignore appendices",
+      "ignore-case": true,
+      "score-if-correct": 5,
+      "alternative-title": "Ignoring appendices was committed as a single commit."
+    },
+    {
+      "rule": "text",
+      "separator": "-",
+      "width": 50,
+      "heading": "SPLITTING THE BOOK INTO TWO VOLUMES",
+      "double-space": true
+    },
+    {
+      "rule": "commit-with-message-has-tag",
+      "tag": "one-volume-version",
+      "contents": "Ignore appendices",
+      "ignore-case": true,
+      "score-if-correct": 5,
+      "alternative-title": "A tag was made before splitting the volumes"
+    },
+    {
+      "rule": "file-untracked-in-head",
+      "score-if-correct": 5,
+      "path": "files/chapters/chapter-1.txt",
+      "ignore-case": true,
+      "alternative-title": "Chapter 1 is no longer in files/chapters."
+    },
+    {
+      "rule": "file-has-hash-in-head",
+      "score-if-correct": 5,
+      "path": "files/books/book-1/chapters/chapter-1.txt",
+      "hash": "b5aa92d80bf45e2c28a3ac1ce654d186e52e95e8",
+      "alternative-title": "Chapter 1 is moved into book 1."
+    },
+    {
+      "rule": "commit-with-message-has-tag",
+      "tag": "two-volume-version",
+      "contents": "Create two books",
+      "ignore-case": true,
+      "score-if-correct": 5,
+      "alternative-title": "A tag was made after splitting the volumes"
+    },
+    {
+      "rule": "text",
+      "separator": "-",
+      "width": 50,
+      "heading": "A RE-WRITE",
+      "double-space": true
+    },
+    {
+      "rule": "branch-exists",
+      "branch": "exotic",
+      "score-if-correct": 5,
+      "alternative-title": "The 'exotic' branch has been created."
+    },
+    {
+      "rule": "file-contains-in-branch",
+      "branch": "exotic",
+      "path": "files/books/book-2/chapters/chapter-4.txt",
+      "contents": "ice",
+      "ignore-case": true,
+      "score-if-correct": 5,
+      "alternative-title": "Car has changed to an ice-cream van in exotic chapter 4"
+    },
+    {
+      "rule": "commit-with-message-was-made-on-branch",
+      "branch": "exotic",
+      "contents": "Change book to exotic",
+      "ignore-case": true,
+      "score-if-correct": 5,
+      "alternative-title": "The ice-cream commit was done on the right branch"
+    },
+    {
+      "rule": "commit-with-message-was-made-on-branch",
+      "branch": "master",
+      "contents": "Remove the car",
+      "ignore-case": true,
+      "score-if-correct": 5,
+      "alternative-title": "Removing the car was done on the master branch"
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "path": "files/books/book-2/chapters/chapter-4.txt",
+      "contents": "Remove the car",
+      "ignore-case": true,
+      "alternative-title": "Removing the car was done in the right commit",
+      "score-if-correct": 5
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "path": "files/books/book-2/chapters/chapter-4.txt",
+      "contents": "Keep ice",
+      "ignore-case": true,
+      "alternative-title": "The merge conflict was resolved and committed with the correct message",
+      "score-if-correct": 5
+    },
+    {
+      "rule": "file-contains-in-branch",
+      "branch": "master",
+      "contents": "ice-cream",
+      "path": "files/books/book-2/chapters/chapter-4.txt",
+      "ignore-case": true,
+      "score-if-correct": 10,
+      "alternative-title": "The merge conflict was resolved with ice-cream"
+    } 
+  ]
 }

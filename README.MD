@@ -13,6 +13,7 @@ This repository provides you with practice of all of the git skills you have lea
 5. Moving and removing files
 6. Using the repository log
 7. Creating and merging branches
+8. Resolving merge conflicts
 8. Tagging
 
 ## Introduction
@@ -29,7 +30,7 @@ In this exercise we'll continue the creation of a book. The book is partly writt
 
 Our author thought that factual information at the end of the novel would make it interesting. He added an appendix-a in the chapters folder. Our publisher doesn't like the idea. 
 
-1. Delete appendix-a from git and tell git to ignore all files in the chapter folder that start with appendix. Commit the .gitignore file with the message 'Ignore appendices'.
+1. Delete appendix-a from git and tell git to ignore all files in the chapter folder that start with appendix. Commit both of these changes with the message 'Ignore appendices'.
 
 ## Splitting the book into two volumes
 
@@ -51,15 +52,15 @@ Before we make this big change, tag the latest commit with the name "one-volume-
 
 Move chapters 1, 2 and 3 into book-1 and chapters 4, 5 and 6 into book-2. Commit all of this with the message "Create two books".
 
-Tag this latest commit with the name "two volume version".
+Tag this latest commit with the name "two-volume-version".
 
 ## A re-write
 
 The publisher wants to experiment with a more exotic version of the books while the current version is being printed.
 
 1. Create a branch called "exotic".
-2. In this branch change `car` to `ice-cream van` in chapter 4. Also change the name of Doug in the characters document to "Zane".
-3. Commit these changes with the message "Change book to exotic".
+2. In this branch change `car` to `ice-cream van` in chapter 4.
+3. Commit this change with the message "Change book to exotic".
 
 Meanwhile we realise, just before the book is printed, that Grant never learned to drive and so we need to remove references to his car from the book.
 
