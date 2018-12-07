@@ -16,6 +16,8 @@ This repository provides you with practice of all of the git skills you have lea
 8. Resolving merge conflicts
 8. Tagging
 
+Fork this repository and complete the following steps within a clone.
+
 ## Introduction
 
 In this exercise we'll continue the creation of a book. The book is partly written. Each chapter is a file within the `files\chapters`. To keep track of the plot and characters there are files within the `files\structure` folder.
