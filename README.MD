@@ -22,6 +22,8 @@ Fork this repository and complete the following steps within a clone.
 
 In this exercise we'll continue the creation of a book. The book is partly written. Each chapter is a file within the `files\chapters`. To keep track of the plot and characters there are files within the `files\structure` folder.
 
+Run gitruler to set up the exercise.
+
 ## Adding the next two chapters
 
 1. Our author has completed writing chapter 5 and started chapter 6 but didn't commit them. Commit chapter 5 with the message "Chapter 5 complete".
